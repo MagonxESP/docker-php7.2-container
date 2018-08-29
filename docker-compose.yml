@@ -1,9 +1,13 @@
 version: '3'
 services:
-    test-php7.2:
+    php7.2:
         image: 'magonx/php7.2'
-        ports: '8000:80'
+        ports: 
+            - '8000:80'
         volumes:
             - ./:/var/www/html
         environment:
             XDEBUG_CONFIG: remote_host=192.168.1.107
+            DOCUMENT_ROOT: /public
+            SERVER_NAME: www.blog.local
+            SERVER_ALIAS: blog.local
